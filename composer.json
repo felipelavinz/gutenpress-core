@@ -1,0 +1,29 @@
+{
+	"name": "gutenpress/gutenpress",
+	"description": "Toolset for WordPress",
+	"license": "GPL-3.0",
+	"authors": [
+		{
+			"name": "Felipe Lavín Z.",
+			"email": "felipe@yukei.net"
+		}
+	],
+	"autoload": {
+		"classmap": ["src/"]
+	},
+	"minimum-stability": "dev",
+	"repositories" : [
+		{
+			"type" : "vcs",
+			"url"  : "https://gitlab.com/GutenPress/forms.git"
+		},
+		{
+			"type" : "vcs",
+			"url"  : "https://gitlab.com/GutenPress/helpers.git"
+		}
+	],
+	"require" : {
+		"gutenpress/forms"   : "@dev",
+		"gutenpress/helpers" : "@dev"
+	}
+}
