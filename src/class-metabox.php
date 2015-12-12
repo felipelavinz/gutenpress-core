@@ -151,8 +151,14 @@ abstract class Metabox{
 		$fields = $this->get_fields();
 		foreach ( $fields as &$field ) {
 			if ( $field instanceof Forms\Form_Element_Interface ) {
-				$value = get_post_meta( $post->ID, $this->get_field_key( $field ), true );
-				$field->set_value( $value );
+				$value = get_post_meta( $post->ID, $this->get_field_key( $field ), false );
+				// if it's a single value, set as string
+				if ( count( $value ) === 1 ) {
+					$field->set_value( current( $value ) );
+				} else {
+					// ... otherwhise, as array
+					$field->set_value( $value );
+				}
 				$field->set_name( $this->get_id() .'_metabox['. $field->get_name() .']' );
 			}
 			/**
@@ -243,7 +249,14 @@ abstract class Metabox{
 	 */
 	private function update_post_meta( $post_id, $key, $data ){
 		if ( isset( $data[ $key ] ) ) {
-			update_post_meta( $post_id, $this->id .'_'. $key, $data[ $key ] );
+			if ( is_array($data[$key]) ) {
+				delete_post_meta( $post_id, $this->id .'_'. $key );
+				foreach ( $data[$key] as $val ) {
+					add_post_meta( $post_id, $this->id .'_'. $key, $val );
+				}
+			} else {
+				update_post_meta( $post_id, $this->id .'_'. $key, $data[ $key ] );
+			}
 		} else {
 			// if data it's defined, but no data is sent, try to delete the given key
 			// this will take care of checkboxes and such
