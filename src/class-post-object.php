@@ -86,6 +86,22 @@ abstract class Post_Object{
 		return metadata_exists( 'post', $this->post->ID, $key );
 	}
 
+	public function __debugInfo(){
+		$debug_object = array();
+		foreach ( get_object_vars($this) as $key => $val ) {
+			$debug_object[ $key ] = $val;
+		}
+		foreach ( get_post_custom( $this->post->ID ) as $key => $val ) {
+			$debug_object[ $key ] = $val;
+		}
+		return $debug_object;
+	}
+
+	public static function get_instance( $post = null ){
+		$post = get_post( $post );
+		return $obj ? $obj : new static( $post );
+	}
+
 	/**
 	 * Return the instance of the WP_Post
 	 * @return \WP_Post The post object that we're working with
