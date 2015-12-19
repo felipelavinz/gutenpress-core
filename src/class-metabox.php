@@ -211,10 +211,11 @@ abstract class Metabox{
 
 		$data = $_POST[ $this->get_id() .'_metabox' ];
 		$data = Arrays::filter_recursive( $data );
-		$data = $this->sanitize_data( $data );
 
 		// no need for slashes; WordPress will take care of sanitizing when using "add/update_post_meta"
 		$data = stripslashes_deep( $data );
+
+		$data = $this->sanitize_data( $data );
 
 		// handle file uploads
 		if ( ! empty($_FILES[ $this->id .'-form' ]) ) {
