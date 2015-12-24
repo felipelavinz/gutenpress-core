@@ -152,12 +152,18 @@ abstract class Metabox{
 		foreach ( $fields as &$field ) {
 			if ( $field instanceof Forms\Form_Element_Interface ) {
 				$value = get_post_meta( $post->ID, $this->get_field_key( $field ), false );
-				// if it's a single value, set as string
-				if ( count( $value ) === 1 ) {
-					$field->set_value( current( $value ) );
-				} else {
-					// ... otherwhise, as array
-					$field->set_value( $value );
+				switch ( count( $value ) ) {
+					case 0:
+						// no value, skip
+						break;
+					case 1:
+						// if it's a single value, set as string
+						$field->set_value( current( $value ) );
+						break;
+					default:
+						// ... otherwhise, as array
+						$field->set_value( $value );
+						break;
 				}
 				$field->set_name( $this->get_id() .'_metabox['. $field->get_name() .']' );
 			}
