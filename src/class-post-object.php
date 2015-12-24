@@ -99,7 +99,7 @@ abstract class Post_Object{
 
 	public static function get_instance( $post = null ){
 		$post = get_post( $post );
-		return $obj ? $obj : new static( $post );
+		return new static( $post );
 	}
 
 	/**
