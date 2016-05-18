@@ -113,6 +113,9 @@ abstract class Post_Query implements \Iterator, \Countable{
 	 * @return \WP_Query The current WP_Query
 	 */
 	public function get_query(){
+		if ( ! $this->query ) {
+			$this->do_query();
+		}
 		return $this->query;
 	}
 
