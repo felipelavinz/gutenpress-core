@@ -126,8 +126,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.com/GutenPress/forms.git",
-                "reference": "91c279d1f36ba6becbbf97f6ea700d45f67011d9"
+                "url": "git@gitlab.com:GutenPress/forms.git",
+                "reference": "d0df0916ae8eec75939a0c3a949d91b921b05f72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://gitlab.com/api/v3/projects/GutenPress%2Fforms/repository/archive.zip?sha=d0df0916ae8eec75939a0c3a949d91b921b05f72",
+                "reference": "d0df0916ae8eec75939a0c3a949d91b921b05f72",
+                "shasum": ""
             },
             "require": {
                 "gutenpress/helpers": "@dev"
@@ -148,14 +154,14 @@
                 }
             ],
             "description": "Forms component for GutenPress",
-            "time": "2015-12-10 02:05:31"
+            "time": "2016-05-18 22:10:15"
         },
         {
             "name": "gutenpress/helpers",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.com/GutenPress/helpers.git",
+                "url": "git@gitlab.com:GutenPress/helpers.git",
                 "reference": "4a8331fa2e831dfa65f65239b8695b490dfdc6c5"
             },
             "require": {
