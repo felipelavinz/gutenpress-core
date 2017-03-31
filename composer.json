@@ -15,11 +15,11 @@
 	"repositories" : [
 		{
 			"type" : "vcs",
-			"url"  : "https://gitlab.com/GutenPress/forms.git"
+			"url"  : "https://github.com/felipelavinz/gutenpress-forms.git"
 		},
 		{
 			"type" : "vcs",
-			"url"  : "https://gitlab.com/GutenPress/helpers.git"
+			"url"  : "https://github.com/felipelavinz/gutenpress-helpers.git"
 		}
 	],
 	"require" : {
