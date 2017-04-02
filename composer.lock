@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "833e40d8cb3eba2cd9c7fb34a87a8974",
+    "hash": "37ef91cd83a72668bff010f061dca76b",
     "content-hash": "c18264d264874922eb218f292da3e539",
     "packages": [
         {
@@ -127,12 +127,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/felipelavinz/gutenpress-forms.git",
-                "reference": "4eb871a6315811d5dfaad9934cf460e9413bf734"
+                "reference": "a10367e26dc918ec793d8230b684edc9e4367776"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/felipelavinz/gutenpress-forms/zipball/4eb871a6315811d5dfaad9934cf460e9413bf734",
-                "reference": "4eb871a6315811d5dfaad9934cf460e9413bf734",
+                "url": "https://api.github.com/repos/felipelavinz/gutenpress-forms/zipball/a10367e26dc918ec793d8230b684edc9e4367776",
+                "reference": "a10367e26dc918ec793d8230b684edc9e4367776",
                 "shasum": ""
             },
             "require": {
@@ -158,7 +158,7 @@
                 "source": "https://github.com/felipelavinz/gutenpress-forms/tree/master",
                 "issues": "https://github.com/felipelavinz/gutenpress-forms/issues"
             },
-            "time": "2016-05-20 12:23:24"
+            "time": "2017-03-31 21:44:42"
         },
         {
             "name": "gutenpress/helpers",
