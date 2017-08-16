@@ -24,6 +24,7 @@
 		}
 	],
 	"require" : {
+		"composer/installers": "~1.0",
 		"gutenpress/forms"   : "@dev",
 		"gutenpress/helpers" : "@dev"
 	}
